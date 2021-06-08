@@ -1,5 +1,9 @@
-import { Flex, Text, Input, Icon } from "@chakra-ui/react";
-import { RiSearchLine } from "react-icons/ri"
+import { Flex, Text, Input, Icon, HStack, Box, Avatar } from "@chakra-ui/react";
+import {
+  RiNotificationLine,
+  RiSearchLine,
+  RiUserAddLine,
+} from "react-icons/ri";
 
 export function Header() {
   return (
@@ -20,30 +24,55 @@ export function Header() {
         </Text>
       </Text>
       <Flex
-          as="label"
-          flex="1"
-          py="4"
-          px="8"
-          ml="6"
-          maxWidth={400}
-          alignSelf="center"
-          color="gray.200"
-          position="relative"
-          bg="gray.800"
-          borderRadius="full"
+        as="label"
+        flex="1"
+        py="4"
+        px="8"
+        ml="6"
+        maxWidth={400}
+        alignSelf="center"
+        color="gray.200"
+        position="relative"
+        bg="gray.800"
+        borderRadius="full"
+      >
+        <Input
+          color="gray.500"
+          variant="unstyled"
+          px="4"
+          mr="4"
+          placeholder="Buscar na plataforma"
+          _placeholder={{
+            color: "gray.400",
+          }}
+        />
+        <Icon as={RiSearchLine} fontSize="22" />
+      </Flex>
+
+      <Flex align="center" ml="auto">
+        <HStack
+          spacing="4"
+          mx="8"
+          pr="8"
+          py="1"
+          color="gray.300"
+          borderRightWidth={1}
+          borderColor="gray.700"
         >
-          <Input
-            color="gray.500"
-            variant="unstyled"
-            px="4"
-            mr="4"
-            placeholder="Buscar na plataforma"
-            _placeholder={{
-              color: "gray.400"
-            }}
-          />
-          <Icon  as={RiSearchLine} fontSize="22"/>
+          <Icon as={RiNotificationLine} fontSize="20" />
+          <Icon as={RiUserAddLine} fontSize="20" />
+        </HStack>
+
+        <Flex align="center">
+          <Box mr="4" textAlign="right">
+            <Text>Moisés Menezes</Text>
+            <Text color="gray.300" fontSize="small">
+              moisesmenezes90@gmail.com
+            </Text>
+          </Box>
+          <Avatar size="md" name="Moises Menezes" src="https://github.com/MoisesMenezes.png"/>
         </Flex>
+      </Flex>
     </Flex>
   );
 }
