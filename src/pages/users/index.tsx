@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
+import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 
 export default function UserList() {
@@ -67,19 +68,21 @@ export default function UserList() {
                 </Td>
                 <Td>19 de Março de 2021</Td>
                 <Td>
-                <Button
-              as="a"
-              size="sm"
-              fontSize="sm"
-              colorScheme="purple"
-              leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-            >
-              Editar
-            </Button>
+                  <Button
+                    as="a"
+                    size="sm"
+                    fontSize="sm"
+                    colorScheme="purple"
+                    leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
+                  >
+                    Editar
+                  </Button>
                 </Td>
               </Tr>
             </Tbody>
           </Table>
+
+          <Pagination />
         </Box>
       </Flex>
     </Box>
