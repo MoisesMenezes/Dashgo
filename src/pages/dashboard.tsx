@@ -27,7 +27,7 @@ const options = {
     enabled: false,
   },
   xaxis: {
-    type: 'datetime' as const,
+    type: "datetime" as const,
     axisBorder: {
       color: theme.colors.gray[600],
     },
@@ -46,11 +46,11 @@ const options = {
     opacity: 0.3,
     type: "gradient",
     gradient: {
-      shade: 'dark',
+      shade: "dark",
       opacityFrom: 0.7,
       opacityTo: 0.3,
-    }
-  }
+    },
+  },
 };
 
 const series = [{ name: "series1", data: [80, 50, 120, 180, 40] }];

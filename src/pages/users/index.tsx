@@ -17,6 +17,7 @@ import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
+import Router from "next/router";
 
 export default function UserList() {
   return (
@@ -36,6 +37,8 @@ export default function UserList() {
               size="sm"
               fontSize="sm"
               colorScheme="pink"
+              onClick={() => Router.push("/users/create")}
+              cursor="pointer"
               leftIcon={<Icon as={RiAddLine} fontSize="20" />}
             >
               Criar novo
