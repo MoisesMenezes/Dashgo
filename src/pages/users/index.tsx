@@ -12,6 +12,7 @@ import {
   Checkbox,
   Tbody,
   Text,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
@@ -20,6 +21,11 @@ import { Sidebar } from "../../components/Sidebar";
 import Router from "next/router";
 
 export default function UserList() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Box>
       <Header />
@@ -45,20 +51,20 @@ export default function UserList() {
             </Button>
           </Flex>
 
-          <Table colorScheme="whiteAlpha">
+          <Table colorScheme="whiteAlpha" overflowX="scroll">
             <Thead>
               <Tr>
-                <Th px="6" color="gray.300" width="8">
+                <Th px={["4", "4", "6"]} color="gray.300" width="8">
                   <Checkbox colorScheme="pink" />
                 </Th>
                 <Th>Usuários</Th>
-                <Th>Data de cadastro</Th>
+                {isWideVersion && <Th>Data de cadastro</Th>}
                 <Th width="8"></Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
-                <Td px="6">
+                <Td px={["4", "4", "6"]}>
                   <Checkbox colorScheme="pink" />
                 </Td>
                 <Td>
@@ -69,8 +75,9 @@ export default function UserList() {
                     </Text>
                   </Box>
                 </Td>
-                <Td>19 de Março de 2021</Td>
-                <Td>
+
+                {isWideVersion && <Td>19 de Março de 2021</Td>}
+                <Td px={["4", "4", "6"]}>
                   <Button
                     as="a"
                     size="sm"
