@@ -11,6 +11,7 @@ import {
 import { Header } from "../../components/Header";
 import Input from "../../components/Form/Input";
 import { Sidebar } from "../../components/Sidebar";
+import Router from "next/router";
 
 export default function CreateUser() {
   return (
@@ -44,7 +45,12 @@ export default function CreateUser() {
 
           <Flex mt="8" justify="flex-end">
             <HStack spacing="4">
-              <Button colorScheme="whiteAlpha">Cancelar</Button>
+              <Button
+                colorScheme="whiteAlpha"
+                onClick={() => Router.push("/users")}
+              >
+                Cancelar
+              </Button>
               <Button colorScheme="pink">Salvar</Button>
             </HStack>
           </Flex>
