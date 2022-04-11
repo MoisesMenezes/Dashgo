@@ -14,11 +14,10 @@ export function makeServer() {
       user: Model.extend<Partial<User>>({})
     },
 
-
     factories: {
       user: Factory.extend({
         name(i: number){
-          return `User ${i}`;
+          return `User ${i + 1}`;
         },
         email(){
           return faker.internet.email().toLowerCase();
